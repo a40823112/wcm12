@@ -1,1 +1,1 @@
-var tipuesearch = {"pages": [{'title': '每周上課內容', 'text': 'W7: (1.)設定 OBS、Youtube直播 (2.)小組討論設定、建立網站 W8: 線上課程、小組線上討論', 'tags': '', 'url': '每周上課內容.html'}]};
+var tipuesearch = {"pages": [{'title': 'About', 'text': '', 'tags': '', 'url': 'About.html'}, {'title': '每周上課內容', 'text': 'W7: (1.)設定 OBS、Youtube直播 (2.)小組討論設定、建立網站 W8: 線上課程、小組線上討論', 'tags': '', 'url': '每周上課內容.html'}]};
