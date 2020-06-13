@@ -13,7 +13,7 @@
 <p><br/><strong><span style="color: #000000;">UEFI :</span> </strong>Unified Extensible Firmware Interface  <span>統一可延伸韌體介面</span> <br/>[UEFI就像<span style="color: #000000;"><strong>進階版的BIOS</strong></span>，但不能稱它為BIOS]</p>
 <p><span>UEFI是一種新的主機板引導項，它不同於傳統BIOS的開機流程，這種介面可以讓作業系統自動從預啟動的操作環境中載入，加快作業系統的速度。</span><br/>UEFI帶來的<span style="color: #000000;"><strong>最大改變就是<span style="color: #ff0000;">圖形化</span>、<span style="color: #ff0000;">可滑鼠操作的介面</span></strong></span></p>
 <p><span style="color: #0000ff;"><strong>優勢: </strong><span style="color: #000000;"><span style="color: #0000ff;">1.</span>  <strong>有更強的安全性</strong></span></span><br/><span style="color: #0000ff;">          2.</span>  <span style="color: #000000;"><strong>啟動速度更快</strong></span><br/><span style="color: #0000ff;">          3.</span>  <span style="color: #000000;"><strong>支援容量更大</strong></span></p>
-<h2>W16</h2><h1>錯誤修正</h1>
+<h2>W16.</h2><h1>錯誤修正</h1>
 <h2>命令列無法使用pip下載程式</h2>
 <p>我們當初是從 get-pip.py 下載pip，但下載後的<strong>pip install</strong>中的二位元檔的<strong>Python</strong>是<strong>windows</strong>版的(python<strong>w</strong>.exe)，所以當我們在命令列使用Python執行pip它才不會有反應。</p>
 <p>我們利用 <strong>Binary Editor</strong> (二位元編輯器) 來更改pip.exe中的pythonw.exe改為python.exe。</p>
