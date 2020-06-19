@@ -1,6 +1,7 @@
 <h1>First</h1>
 <p><br/><br/><br/>每周上課內容</p>
-<p>W7: (1.)設定 OBS、Youtube直播 (2.)小組討論設定、建立網站<br/>W8: 線上課程、小組線上討論<br/>W10: 利用 Python 程式讀取學生的座號與修課成績<br/>W11: (1.)<span>說明如何將Python放入虛擬主機中</span>(2.)利用ssh來push倉儲<br/>W12: 安裝虛擬主機<br/>W13: 建立一台實體主機<br/>W14: 編譯NGINX<br/>W15: (1.)利用Pypdf2切割pdf檔(2.)利用HxD編修pip.exe<br/>W16: 網際程式開發<br/>W17: 說明分割與合併程式</p><h1>上課內容整理</h1>
+<p>W7: (1.)設定 OBS、Youtube直播 (2.)小組討論設定、建立網站<br/>W8: 線上課程、小組線上討論<br/>W10: 利用 Python 程式讀取學生的座號與修課成績<br/>W11: (1.)<span>說明如何將Python放入虛擬主機中</span>(2.)利用ssh來push倉儲<br/>W12: 安裝虛擬主機<br/>W13: 建立一台實體主機<br/>W14: 編譯NGINX<br/>W15: (1.)利用Pypdf2切割pdf檔(2.)利用HxD編修pip.exe<br/>W16: 網際程式開發<br/>W17: 說明分割與合併程式</p>
+<h1>上課內容整理</h1>
 <h2>W10</h2>
 <h3>Python程式</h3>
 <pre class="brush:dart;auto-links:false;toolbar:false" contenteditable="false">import csv
@@ -67,10 +68,12 @@ def hello_world():
     return 'Hello, From Flask!'
   
 if __name__== '__main__': 
-    app.run()</pre><h3>CSV</h3>
+    app.run()</pre>
+<h3>CSV</h3>
 <p>逗號分隔值 (<span>Comma-Separated Values</span>) 其檔案以<strong>純文字</strong><span>形式儲存表格</span><span>資料。</span></p>
 <p><span>CSV檔案由任意數目的記錄<span>組成，記錄間以換行符號分隔；每條記錄由欄位</span><span>組成，欄位間的分隔符是其它字元或字串，最常見的就是逗號。</span></span></p>
-<p></p><h2>W14</h2>
+<p></p>
+<h2>W14</h2>
 <h3>MBR與GPT</h3>
 <p><span><strong>MBR:</strong> Master Boot Record 主開機記錄 </span><span><br/>[啟動系統:<strong>BIOS</strong>]<br/>只適用於最大容量<span style="color: #000000;"><strong><span style="background-color: #ffffff;">2TB的硬碟</span></strong></span>，如果使用容量更大的硬碟，則無法識別，同時MBR也只支援最大4個主分割區。<br/>現今的社會都是大容量的硬碟，所以使用MBR會被侷限。<br/><br/><strong>GPT:</strong> GUID Partition Table (俗稱:GUID磁碟分割表格)</span><br/><span>[啟動系統:</span><strong>UEIF</strong><span>]</span><br/>GPT逐漸取代掉MBR，GPT使用了更現代的技術取代老舊的MBR磁碟分割表格。<br/>GPT的推出與 <span style="color: #ff0000;"><strong>UEFI</strong></span> 是相輔相成的，<span>想要<strong><span style="color: #000000;">使用GPT</span></strong>就必須是<span style="color: #000000;"><strong>UEFI的環境</strong></span></span>。</p>
 <p><strong><span style="color: #0000ff;">優勢: 1.</span></strong><span style="color: #0000ff;"><span style="color: #000000;">突破了<strong>MBR</strong>最大只支援<strong>2T</strong>硬碟的限制<br/>         <strong><span style="color: #0000ff;"> 2.</span></strong>允許無限數量的分割區不必創建擴展分區即可使其工作</span></span></p>
@@ -81,7 +84,27 @@ if __name__== '__main__':
 <p><br/><strong><span style="color: #000000;">UEFI :</span> </strong>Unified Extensible Firmware Interface  <span>統一可延伸韌體介面</span> <br/>[UEFI就像<span style="color: #000000;"><strong>進階版的BIOS</strong></span>，但不能稱它為BIOS]</p>
 <p><span>UEFI是一種新的主機板引導項，它不同於傳統BIOS的開機流程，這種介面可以讓作業系統自動從預啟動的操作環境中載入，加快作業系統的速度。</span><br/>UEFI帶來的<span style="color: #000000;"><strong>最大改變就是<span style="color: #ff0000;">圖形化</span>、<span style="color: #ff0000;">可滑鼠操作的介面</span></strong></span></p>
 <p><span style="color: #0000ff;"><strong>優勢: </strong><span style="color: #000000;"><span style="color: #0000ff;">1.</span>  <strong>有更強的安全性</strong></span></span><br/><span style="color: #0000ff;">          2.</span>  <span style="color: #000000;"><strong>啟動速度更快</strong></span><br/><span style="color: #0000ff;">          3.</span>  <span style="color: #000000;"><strong>支援容量更大</strong></span></p>
-<h2>W16</h2>
+<h2>W15</h2>
+<p>利用Pypdf2分割PDF檔:</p>
+<pre class="brush:dart;auto-links:false;toolbar:false" contenteditable="false"># pypdf2_ex1.py
+import os
+from PyPDF2 import PdfFileWriter, PdfFileReader
+ 
+pdfReader = PdfFileReader(open("2002_Book_Real-WorldASPNETBuildingAConte.pdf", "rb"))
+information = [("WhatIsCMS",18,45)]
+ 
+for page in range(len(information)):
+    pdf_writer = PdfFileWriter()
+    start = information[page][1]
+    end = information[page][2]
+    while start&lt;=end:
+        pdf_writer.addPage(pdfReader.getPage(start-1))
+        start+=1
+    if not os.path.exists("./"):
+        os.makedirs(savepath)
+    output_filename = '{}_{}_page_{}.pdf'.format(information[page][0],information[page][1], information[page][2])
+    with open(output_filename,'wb') as out:
+        pdf_writer.write(out)</pre><h2>W16</h2>
 <h3>何謂wsgi</h3>
 <p>WSGI (<span>Web Server Gateway Interface</span>) :</p>
 <p><span>WSGI 為一個Gateway，也就是閘道器。閘道器的作用就是在協議之間進行轉換。</span></p>
