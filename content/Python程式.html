@@ -154,11 +154,72 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">W14 << <a href='W14.html'>Previous</a> <a href='BIOS與UEFI.html'>Next</a> >> BIOS與UEFI<br /><h1>MBR與GPT</h1>
-<p><span><strong>MBR:</strong> Master Boot Record 主開機記錄 </span><span><br/>[啟動系統:<strong>BIOS</strong>]<br/>只適用於最大容量<span style="color: #000000;"><strong><span style="background-color: #ffffff;">2TB的硬碟</span></strong></span>，如果使用容量更大的硬碟，則無法識別，同時MBR也只支援最大4個主分割區。<br/>現今的社會都是大容量的硬碟，所以使用MBR會被侷限。<br/><br/><strong>GPT:</strong> GUID Partition Table (俗稱:GUID磁碟分割表格)</span><br/><span>[啟動系統:</span><strong>UEIF</strong><span>]</span><br/>GPT逐漸取代掉MBR，GPT使用了更現代的技術取代老舊的MBR磁碟分割表格。<br/>GPT的推出與 <span style="color: #ff0000;"><strong>UEFI</strong></span> 是相輔相成的，<span>想要<strong><span style="color: #000000;">使用GPT</span></strong>就必須是<span style="color: #000000;"><strong>UEFI的環境</strong></span></span>。</p>
-<p><strong><span style="color: #0000ff;">優勢: 1.</span></strong><span style="color: #0000ff;"><span style="color: #000000;">突破了<strong>MBR</strong>最大只支援<strong>2T</strong>硬碟的限制<br/>         <strong><span style="color: #0000ff;"> 2.</span></strong>允許無限數量的分割區不必創建擴展分區即可使其工作</span></span></p>
-<p><span style="color: #0000ff;"><span style="color: #000000;">在<strong>MBR</strong>的磁碟上，<span>分割區和引導資料都存儲在<strong><span style="color: #ff0000;">同一個地方</span></strong>。如果資料被<span style="color: #ff0000;"><strong>覆蓋</strong></span>或<strong><span style="color: #ff0000;">損壞</span></strong>，就無法電將腦啟動。</span><br/>相較之下，<strong>GPT</strong>磁碟上會儲存<strong><span style="color: #ff0000;">多個副本<span style="color: #000000;">，</span></span></strong><span style="color: #ff0000;"><span style="color: #000000;">使其更加穩定、安全，並且可以在<strong>資料損壞</strong>下進行<strong>修復</strong>。</span></span></span></span></p>
-<br />W14 << <a href='W14.html'>Previous</a> <a href='BIOS與UEFI.html'>Next</a> >> BIOS與UEFI</div>
+    <div id="tipue_search_content">W10 << <a href='W10.html'>Previous</a> <a href='CSV.html'>Next</a> >> CSV<br /><h1>Python程式</h1>
+<pre class="brush:dart;auto-links:false;toolbar:false" contenteditable="false">import csv
+  
+# read student list
+filename = 'D:/1a/1alist.txt'
+with open(filename, encoding="utf-8") as f:
+    content = f.readlines()
+    student = [x.strip() for x in content] 
+#print(content)
+#print(student)
+  
+# Timestamp, email, ????, url, score, desp, memo
+# 0, 1, 2, 3, 4, 5, 6
+#total = 0
+ 
+all = {}
+with open('D:/1a/1a.csv', encoding="utf-8") as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter=',')
+      
+    line_count = 0
+    for row in csv_reader:
+        if line_count == 0:
+            #print(f'Column names are {", ".join(row)}')
+            line_count += 1
+        else:
+            student_num = row[1].split("@")[0]
+            #print(student_num)
+            student_score = row[4]
+            #print(student_score)
+            try:
+                all.update({student_num: student_score})
+            except:
+                all.update({student_num: "error"})
+            #print(f'\t{row[0]} works in the {row[1]} department, and was born in {row[2]}.')
+            #print(f'\t{row[4]}')
+            #total += int(row[4])
+            line_count += 1
+#print(all)
+#print(student)
+ 
+for i in student:
+      
+    #if i in all:
+        #pass
+    #else:
+        #print(str(i))
+      
+    try:
+        print(i + "\t" + all[i])
+    except:
+        print(i + "\t60")
+ 
+  
+    #print(f'Processed {line_count} lines.')
+    #print("??=" + str(total/line_count))</pre>
+<p><strong>Flask程式:</strong></p>
+<pre class="brush:dart;auto-links:false;toolbar:false" contenteditable="false">from flask import Flask
+  
+app = Flask(__name__)
+  
+@app.route('/') 
+def hello_world():
+    return 'Hello, From Flask!'
+  
+if __name__== '__main__': 
+    app.run()</pre><br />W10 << <a href='W10.html'>Previous</a> <a href='CSV.html'>Next</a> >> CSV</div>
         
     <!-- footer -->
       <div class="container">
