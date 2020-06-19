@@ -85,12 +85,33 @@ if __name__== '__main__':
 <p><span>UEFI是一種新的主機板引導項，它不同於傳統BIOS的開機流程，這種介面可以讓作業系統自動從預啟動的操作環境中載入，加快作業系統的速度。</span><br/>UEFI帶來的<span style="color: #000000;"><strong>最大改變就是<span style="color: #ff0000;">圖形化</span>、<span style="color: #ff0000;">可滑鼠操作的介面</span></strong></span></p>
 <p><span style="color: #0000ff;"><strong>優勢: </strong><span style="color: #000000;"><span style="color: #0000ff;">1.</span>  <strong>有更強的安全性</strong></span></span><br/><span style="color: #0000ff;">          2.</span>  <span style="color: #000000;"><strong>啟動速度更快</strong></span><br/><span style="color: #0000ff;">          3.</span>  <span style="color: #000000;"><strong>支援容量更大</strong></span></p>
 <h2>W15</h2>
+<h3>利用Pypdf2來切割PDF檔</h3>
+<pre class="brush:dart;auto-links:false;toolbar:false" contenteditable="false"># pypdf2_ex1.py
+import os
+from PyPDF2 import PdfFileWriter, PdfFileReader
+ 
+pdfReader = PdfFileReader(open("2002_Book_Real-WorldASPNETBuildingAConte.pdf", "rb"))
+information = [("WhatIsCMS",18,45)]
+ 
+for page in range(len(information)):
+    pdf_writer = PdfFileWriter()
+    start = information[page][1]
+    end = information[page][2]
+    while start&lt;=end:
+        pdf_writer.addPage(pdfReader.getPage(start-1))
+        start+=1
+    if not os.path.exists("./"):
+        os.makedirs(savepath)
+    output_filename = '{}_{}_page_{}.pdf'.format(information[page][0],information[page][1], information[page][2])
+    with open(output_filename,'wb') as out:
+        pdf_writer.write(out)</pre>
 <h2>W16</h2>
 <h3>何謂wsgi</h3>
 <p>WSGI (<span>Web Server Gateway Interface</span>) :</p>
 <p><span>WSGI 為一個Gateway，也就是閘道器。閘道器的作用就是在協議之間進行轉換。</span></p>
 <p><span>WSGI <span>是一個web元件的介面防範，wsgi將web元件分為三類：<strong>web伺服器、web中介軟體、web應用程式。</strong>作為 Web 伺服器與 Web 應用程式或應用框架之間的一種低階別的介面，以提升可移植 Web 應用開發的共同點。</span></span></p>
 <p><span>WSGI有兩方：<strong>伺服器</strong>或<strong>閘道器</strong>一方，以及<strong>應用程式</strong>或<strong>應用框架</strong>一方。服務方呼叫應用方，提供環境資訊，以及一個回撥函式，並接收Web內容作為返回值。</span></p>
+<h2><span>W17</span></h2>
 <h1>錯誤修正</h1>
 <h2>命令列無法使用pip下載程式</h2>
 <p>我們當初是從 get-pip.py 下載pip，但下載後的<strong>pip install</strong>中的二位元檔的<strong>Python</strong>是<strong>windows</strong>版的(python<strong>w</strong>.exe)，所以當我們在命令列使用Python執行pip它才不會有反應。</p>
