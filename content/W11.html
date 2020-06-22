@@ -154,73 +154,8 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">W10 << <a href='W10.html'>Previous</a> <a href='CSV.html'>Next</a> >> CSV<br /><h1>Python程式</h1>
-<pre class="brush:dart;auto-links:false;toolbar:false" contenteditable="false">import csv
-  
-# read student list
-filename = 'D:/1a/1alist.txt'
-with open(filename, encoding="utf-8") as f:
-    content = f.readlines()
-    student = [x.strip() for x in content] 
-#print(content)
-#print(student)
-  
-# Timestamp, email, ????, url, score, desp, memo
-# 0, 1, 2, 3, 4, 5, 6
-#total = 0
- 
-all = {}
-with open('D:/1a/1a.csv', encoding="utf-8") as csv_file:
-    csv_reader = csv.reader(csv_file, delimiter=',')
-      
-    line_count = 0
-    for row in csv_reader:
-        if line_count == 0:
-            #print(f'Column names are {", ".join(row)}')
-            line_count += 1
-        else:
-            student_num = row[1].split("@")[0]
-            #print(student_num)
-            student_score = row[4]
-            #print(student_score)
-            try:
-                all.update({student_num: student_score})
-            except:
-                all.update({student_num: "error"})
-            #print(f'\t{row[0]} works in the {row[1]} department, and was born in {row[2]}.')
-            #print(f'\t{row[4]}')
-            #total += int(row[4])
-            line_count += 1
-#print(all)
-#print(student)
- 
-for i in student:
-      
-    #if i in all:
-        #pass
-    #else:
-        #print(str(i))
-      
-    try:
-        print(i + "\t" + all[i])
-    except:
-        print(i + "\t60")
- 
-  
-    #print(f'Processed {line_count} lines.')
-    #print("??=" + str(total/line_count))</pre>
-<p><strong>Flask程式:</strong></p>
-<pre class="brush:dart;auto-links:false;toolbar:false" contenteditable="false">from flask import Flask
-  
-app = Flask(__name__)
-  
-@app.route('/') 
-def hello_world():
-    return 'Hello, From Flask!'
-  
-if __name__== '__main__': 
-    app.run()</pre>
-<br />W10 << <a href='W10.html'>Previous</a> <a href='CSV.html'>Next</a> >> CSV</div>
+    <div id="tipue_search_content">CSV << <a href='CSV.html'>Previous</a> <a href='W14.html'>Next</a> >> W14<br /><h1>W11</h1>
+<br />CSV << <a href='CSV.html'>Previous</a> <a href='W14.html'>Next</a> >> W14</div>
         
     <!-- footer -->
       <div class="container">
