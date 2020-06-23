@@ -155,6 +155,7 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">如何建網頁 << <a href='如何建網頁.html'>Previous</a> <br /><h1>如何使用SSH維護倉儲</h1>
+<p><span style="color: #0000ff;"><strong>新增SSH的Key</strong></span></p>
 <p>1.利用編輯器進入shell的命令環境</p>
 <p><img alt="" height="318" src="./../images/1592847266950.jpg" width="600"/></p>
 <p>2.並輸入指令</p>
@@ -175,8 +176,36 @@ img.add_border {
 <p><span></span>6.<span>修改啟動的 start.bat 加入下列設定:</span></p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">set GIT_HOME=%Disk%:\portablegit\bin\
 set GIT_SSH=%Disk%:\putty\plink.exe</pre>
-<p><span>7.將home 下的 .ssh 目錄中的 config 設定檔案為:</span></p>
-<p><span> <img alt="" height="728" src="./../images/1592849596004.jpg" width="570"/></span></p><br />如何建網頁 << <a href='如何建網頁.html'>Previous</a> </div>
+<p><span style="color: #0000ff;"><strong>設定Putty:</strong></span></p>
+<p><span>1.將home 下的 .ssh 目錄中的 config 設定檔案為:</span></p>
+<p><span> <img alt="" height="728" src="./../images/1592849596004.jpg" width="570"/></span></p>
+<p><span>2.將倉儲中 .git 目錄下的 config 檔案中的連線協定, 由 https 改為採 ssh 連線: </span></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">[core]
+    repositoryformatversion = 0
+    filemode = false
+    bare = false
+    logallrefupdates = true
+    symlinks = false
+    ignorecase = true
+[submodule]
+    active = .
+[remote "origin"]
+    #url = https://github.com/mdecourse/wcmj2020.git
+    url = git@github.com:mdecourse/wcmj2020.git
+    fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+    remote = origin
+    merge = refs/heads/master
+[submodule "cmsimde"]
+    url = https://github.com/mdecourse/cmsimde.git</pre>
+<p>3.開啟 Putty.exe<img alt="" height="262" src="./../images/1592619738350.jpg" width="500"/></p>
+<p>4.Load github.com</p>
+<p><img alt="" height="540" src="./../images/1592619753007.jpg" width="600"/></p>
+<p>5.進入 Connection-SSH-Auth 選擇之前所創好的Key</p>
+<p><img alt="" height="539" src="./../images/1592619762698.jpg" width="600"/></p>
+<p>6.回到 Session 按save</p>
+<p><img alt="" height="540" src="./../images/1592619753007.jpg" width="600"/></p>
+<p>8.按下open就可<span>無需輸入帳號密碼進行 git push</span></p><br />如何建網頁 << <a href='如何建網頁.html'>Previous</a> </div>
         
     <!-- footer -->
       <div class="container">

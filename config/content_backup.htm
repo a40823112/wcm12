@@ -166,4 +166,24 @@ for page in range(len(information)):
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">set GIT_HOME=%Disk%:\portablegit\bin\
 set GIT_SSH=%Disk%:\putty\plink.exe</pre>
 <p><span>7.將home 下的 .ssh 目錄中的 config 設定檔案為:</span></p>
-<p><span> </span></p>
+<p><span> <img alt="" height="728" src="/images/1592849596004.jpg" width="570"/></span></p>
+<p><span>8.將倉儲中 .git 目錄下的 config 檔案中的連線協定, 由 https 改為採 ssh 連線: </span></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">[core]
+    repositoryformatversion = 0
+    filemode = false
+    bare = false
+    logallrefupdates = true
+    symlinks = false
+    ignorecase = true
+[submodule]
+    active = .
+[remote "origin"]
+    #url = https://github.com/mdecourse/wcmj2020.git
+    url = git@github.com:mdecourse/wcmj2020.git
+    fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+    remote = origin
+    merge = refs/heads/master
+[submodule "cmsimde"]
+    url = https://github.com/mdecourse/cmsimde.git</pre>
+<p></p>
