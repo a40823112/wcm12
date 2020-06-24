@@ -201,3 +201,18 @@ set GIT_SSH=%Disk%:\putty\plink.exe</pre>
 <h2>如何使用leo編輯Palican</h2>
 <p>1.利用Scite開啟<strong>launchLeo.py，</strong>並且按Tools-Go</p>
 <p>2.開啟FIle-Open-Outline，選擇倉儲config目錄中的pelican.leo</p>
+<p><img alt="" height="244" src="/images/1592899111575.jpg" width="600"/></p>
+<p>3.進入Pelican設定，更改<strong>共用</strong>中的<strong>AUTHOR</strong>與<strong>SITENAME</strong></p>
+<p><img alt="" height="424" src="/images/1592991763056.jpg" width="600"/></p>
+<p>4.更改<b>遠端</b>中的<strong>SITEURL</strong>與<strong>DISQUS_SITENAME</strong></p>
+<p><strong>SITEURL </strong>更改為倉儲Blog路徑</p>
+<p><img alt="" height="476" src="/images/1592989837894.jpg" width="600"/></p>
+<p><strong>DISQUS_SITENAME </strong>更改為自己的Disqus</p>
+<p><img alt="" height="128" src="/images/1592990112557.jpg" width="600"/></p>
+<p><img alt="" height="472" src="/images/1592989814592.jpg" width="600"/></p>
+<p>5.進入<strong>markdown</strong>來更改Blog內容</p>
+<p><img alt="" height="490" src="/images/1592990291646.jpg" width="600"/></p>
+<p>6.更改完內容後save，並在編輯器上輸入</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">pelican markdown -o blog -s local_publishconf.py
+pelican markdown -o blog -s publishconf.py</pre>
+<p>7.輸入後push即可</p>
