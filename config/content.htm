@@ -145,7 +145,7 @@ for page in range(len(information)):
 <h1>操作步驟教學</h1>
 <h2>如何建網頁</h2>
 <p>1.先在Github中新增一個倉儲</p>
-<p></p>
+<p><img alt="" height="518" src="/images/1592994091900.jpg" width="600"/></p>
 <p>2.新增一個tmp的目錄，再將剛創的倉儲clone進去</p>
 <p>利用編輯器在tmp的目錄下輸入</p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">git clone https://github.com/a40823112/test12.git
@@ -153,11 +153,12 @@ for page in range(len(information)):
 <p>3.利用編輯器在倉儲的目錄下輸入</p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">git submodule add https://github.com/mdecourse/cmsimde.git cmsimde</pre>
 <p>4.將倉儲--cmsimde--up_dir內容全部複製到倉儲的目錄下</p>
-<p></p>
+<p><img alt="" height="340" src="/images/1592994494933.jpg" width="600"/></p>
 <p>5.利用編輯器在cmsimde目錄下輸入</p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">python wsgi.py</pre>
-<p></p>
-<p>完成網站建立</p><h2>如何使用SSH維護倉儲</h2>
+<p><img alt="" height="547" src="/images/1592995429512.jpg" width="600"/></p>
+<p>完成網站建立</p>
+<h2>如何使用SSH維護倉儲</h2>
 <p><span style="color: #0000ff;"><strong>新增SSH的Key</strong></span></p>
 <p>1.利用編輯器進入shell的命令環境</p>
 <p><img alt="" height="318" src="/images/1592847266950.jpg" width="600"/></p>
@@ -229,3 +230,16 @@ set GIT_SSH=%Disk%:\putty\plink.exe</pre>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">pelican markdown -o blog -s local_publishconf.py
 pelican markdown -o blog -s publishconf.py</pre>
 <p>7.輸入後push即可</p>
+<h2>如何在虛擬主機上clone倉儲</h2>
+<p>1.開啟<span>虛擬主機，</span><span>進入開機畫面,輸入密碼</span></p>
+<p><span><img alt="" height="504" src="/images/桌面-1.jpg" width="600"/></span></p>
+<p><span>2.進入應用程式集，並開啟編輯器</span></p>
+<p><span><img alt="" height="511" src="/images/1592995926939.jpg" width="600"/></span></p>
+<p><span>3.建立github資料夾</span></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">mkdir github
+</pre>
+<p><span>4.在github目錄下git clone 倉儲</span></p>
+<p><span><img alt="" height="506" src="/images/1592996333154.jpg" width="600"/></span></p>
+<p><span>5.進入程式集中的FILE Manger PCManFM，查看是否建立成功</span></p>
+<p><span><img alt="" height="501" src="/images/1592996353855.jpg" width="600"/></span></p>
+<p></p>
