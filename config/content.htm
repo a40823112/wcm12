@@ -78,16 +78,17 @@ if __name__== '__main__':
 <h3>建立虛擬主機</h3>
 <h2>W14</h2>
 <h3>MBR與GPT</h3>
+<p><img alt="" height="337" src="/images/mbr-vs-gpt.png" width="600"/></p>
 <p><span><strong>MBR:</strong> Master Boot Record 主開機記錄 </span><span><br/>[啟動系統:<strong>BIOS</strong>]<br/>只適用於最大容量<span style="color: #000000;"><strong><span style="background-color: #ffffff;">2TB的硬碟</span></strong></span>，如果使用容量更大的硬碟，則無法識別，同時MBR也只支援最大4個主分割區。<br/>現今的社會都是大容量的硬碟，所以使用MBR會被侷限。<br/><br/><strong>GPT:</strong> GUID Partition Table (俗稱:GUID磁碟分割表格)</span><br/><span>[啟動系統:</span><strong>UEIF</strong><span>]</span><br/>GPT逐漸取代掉MBR，GPT使用了更現代的技術取代老舊的MBR磁碟分割表格。<br/>GPT的推出與 <span style="color: #ff0000;"><strong>UEFI</strong></span> 是相輔相成的，<span>想要<strong><span style="color: #000000;">使用GPT</span></strong>就必須是<span style="color: #000000;"><strong>UEFI的環境</strong></span></span>。</p>
 <p><strong><span style="color: #0000ff;">優勢: 1.</span></strong><span style="color: #0000ff;"><span style="color: #000000;">突破了<strong>MBR</strong>最大只支援<strong>2T</strong>硬碟的限制<br/>         <strong><span style="color: #0000ff;"> 2.</span></strong>允許無限數量的分割區不必創建擴展分區即可使其工作</span></span></p>
-<p><span style="color: #0000ff;"><span style="color: #000000;">在<strong>MBR</strong>的磁碟上，<span>分割區和引導資料都存儲在<strong><span style="color: #ff0000;">同一個地方</span></strong>。如果資料被<span style="color: #ff0000;"><strong>覆蓋</strong></span>或<strong><span style="color: #ff0000;">損壞</span></strong>，就無法電將腦啟動。</span><br/>相較之下，<strong>GPT</strong>磁碟上會儲存<strong><span style="color: #ff0000;">多個副本<span style="color: #000000;">，</span></span></strong><span style="color: #ff0000;"><span style="color: #000000;">使其更加穩定、安全，並且可以在<strong>資料損壞</strong>下進行<strong>修復</strong>。</span></span></span></span></p>
-<h3>BIOS與UEFI</h3>
+<p><span style="color: #0000ff;"><span style="color: #000000;">在<strong>MBR</strong>的磁碟上，<span>分割區和引導資料都存儲在<strong><span style="color: #ff0000;">同一個地方</span></strong>。如果資料被<span style="color: #ff0000;"><strong>覆蓋</strong></span>或<strong><span style="color: #ff0000;">損壞</span></strong>，就無法電將腦啟動。</span><br/>相較之下，<strong>GPT</strong>磁碟上會儲存<strong><span style="color: #ff0000;">多個副本<span style="color: #000000;">，</span></span></strong><span style="color: #ff0000;"><span style="color: #000000;">使其更加穩定、安全，並且可以在<strong>資料損壞</strong>下進行<strong>修復</strong>。</span></span></span></span></p><h3>BIOS與UEFI</h3>
 <p><span style="color: #000000;"><strong>BIOS :</strong> </span><span>Basic Input Output System  基本輸入輸出系統</span></p>
+<p><span><img alt="" height="375" src="/images/0_zc4tauWO6DxJpGBk.jpg" width="600"/></span></p>
 <p><span>BIOS是位於電腦主機板上的晶片中的低級軟體。電腦啟動時， BIOS會喚醒電腦的硬體元件，確保它們正常運行。近幾年BIOS就沒有太大的技術改革，而且一直局限於<span style="color: #000000;"><strong>2TB</strong></span>的磁碟，而且啟動時僅有的<span style="color: #000000;"><strong>1MB執行空間</strong></span>，導致啟動時間被拉長。</span></p>
 <p><br/><strong><span style="color: #000000;">UEFI :</span> </strong>Unified Extensible Firmware Interface  <span>統一可延伸韌體介面</span> <br/>[UEFI就像<span style="color: #000000;"><strong>進階版的BIOS</strong></span>，但不能稱它為BIOS]</p>
+<p><span><img alt="" height="450" src="/images/1006web7401_1024.jpg" width="600"/></span></p>
 <p><span>UEFI是一種新的主機板引導項，它不同於傳統BIOS的開機流程，這種介面可以讓作業系統自動從預啟動的操作環境中載入，加快作業系統的速度。</span><br/>UEFI帶來的<span style="color: #000000;"><strong>最大改變就是<span style="color: #ff0000;">圖形化</span>、<span style="color: #ff0000;">可滑鼠操作的介面</span></strong></span></p>
-<p><span style="color: #0000ff;"><strong>優勢: </strong><span style="color: #000000;"><span style="color: #0000ff;">1.</span>  <strong>有更強的安全性</strong></span></span><br/><span style="color: #0000ff;">          2.</span>  <span style="color: #000000;"><strong>啟動速度更快</strong></span><br/><span style="color: #0000ff;">          3.</span>  <span style="color: #000000;"><strong>支援容量更大</strong></span></p>
-<h2>W15</h2>
+<p><span style="color: #0000ff;"><strong>優勢: </strong><span style="color: #000000;"><span style="color: #0000ff;">1.</span>  <strong>有更強的安全性</strong></span></span><br/><span style="color: #0000ff;">          2.</span>  <span style="color: #000000;"><strong>啟動速度更快</strong></span><br/><span style="color: #0000ff;">          3.</span>  <span style="color: #000000;"><strong>支援容量更大</strong></span></p><h2>W15</h2>
 <h3>利用Pypdf2來切割PDF檔</h3>
 <pre class="brush:dart;auto-links:false;toolbar:false" contenteditable="false"># pypdf2_ex1.py
 import os
@@ -122,16 +123,16 @@ for page in range(len(information)):
 <p><img alt="" height="357" src="/images/1592590672404.jpg" width="439"/></p>
 <h3>何謂 API</h3>
 <p><b>應用程式介面 (</b><strong>A</strong>pplication <strong>P</strong>rogramming <strong>I</strong>nterface<b>):</b></p>
+<p><b><img alt="" height="240" src="/images/1593075427229.jpg" width="600"/></b></p>
 <p>為用於打造應用程式軟體的一組副程式定義、協定與工具。<span>一般而言，API 是指各種軟體組件之間一套明確定義的溝通方法。簡單來說，<strong>其就像是讓你用的一個函式庫，呼叫你想要使用的函式，並給予相對應的參數，函式便回傳給你結果。</strong></span></p>
 <p><strong>WebAPI</strong></p>
-<p><span>在 <strong>Web Application</strong> 的開發情境下的 API 被稱為 Web API，在 Web API 作用時，客戶端和伺服器端會透過 HTTP 通訊協定來進行請求與回應。使用 Web API 的一方是客戶端，可能是瀏覽器、手機或者穿戴式設備等等，客戶端會向伺服器端發出請求，要求執行某個 CRUD 動作。</span></p>
-<h3>何謂 URI</h3>
+<p><span>在 <strong>Web Application</strong> 的開發情境下的 API 被稱為 Web API，在 Web API 作用時，客戶端和伺服器端會透過 HTTP 通訊協定來進行請求與回應。使用 Web API 的一方是客戶端，可能是瀏覽器、手機或者穿戴式設備等等，客戶端會向伺服器端發出請求，要求執行某個 CRUD 動作。</span></p><h3>何謂 URI</h3>
 <p><b>統一資源識別碼 (U</b><span>niform<span> </span></span><b><b>R</b></b><span>esource<span> </span></span><b><b>I</b></b>dentifier<b>) :</b></p>
+<p><b><img alt="" height="360" src="/images/URI_Venn_Diagram.png" width="600"/></b></p>
 <p><span data-ttu-id="05b77-102">是可供您的應用程式在內部網路或網際網路上使用之資源的精簡標記法。</span><span><span> URI</span></span><span data-ttu-id="05b77-103"><span> </span>類別會定義用來處理 URI 的屬性和方法，包括剖析、比較和合併。</span></p>
 <p><span data-ttu-id="05b77-103"><strong>URI</strong><span> </span>又可細分為 :</span></p>
 <p><strong><span data-ttu-id="05b77-103">URL:  統一資源定位符 (Uniform Resource Locator)</span></strong></p>
-<p><strong><span data-ttu-id="05b77-103">URN:  統一資源名稱 (Uniform Resource Name)</span></strong></p>
-<h3>何謂 URL 、 URN</h3>
+<p><strong><span data-ttu-id="05b77-103">URN:  統一資源名稱 (Uniform Resource Name)</span></strong></p><h3>何謂 URL 、 URN</h3>
 <p><strong><span data-ttu-id="05b77-103">URL 統一資源定位符 (Uniform Resource Locator) ;又名網域名稱</span></strong></p>
 <p>URL為URI的子集，其為網際網路<span>上標準的<strong>資源的位址。</strong></span></p>
 <p><span><strong><span data-ttu-id="05b77-103">URN  統一資源名稱 (Uniform Resource Name)</span></strong></span></p>
